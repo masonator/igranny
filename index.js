@@ -1,5 +1,5 @@
-var keys = require('keys.js');
-var cec  = require('cec.js');
+var keys = require('lib/keys.js');
+var cec  = require('lib/cec.js');
 
 var KEY_NEXT   = 'n';
 var KEY_PREV   = 'p';
