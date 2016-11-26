@@ -38,3 +38,6 @@ jspm_packages
 
 # osx
 .DS_Store
+
+# drive files
+files

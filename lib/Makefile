@@ -1,0 +1,2 @@
+init:
+	drive init ./files
