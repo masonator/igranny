@@ -38,6 +38,7 @@ jspm_packages
 
 # osx
 .DS_Store
+iGranny-linux-armv7l
 
 # drive files
 files

@@ -1,6 +1,7 @@
 {
   "name": "igranny",
-  "version": "1.0.0",
+  "productName": "iGranny",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
