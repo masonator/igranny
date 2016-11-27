@@ -9,6 +9,7 @@ var keyMap = {
   84: toggle
 };
 
+document.onclick = next;
 document.onkeydown = function(event) {
   var handler = keyMap[event.keyCode] || noop;
   handler();
