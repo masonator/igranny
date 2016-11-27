@@ -1,23 +1,25 @@
-var keys  = require('./lib/keys.js');
-var cec   = require('./lib/cec.js');
-var drive = require('./lib/drive.js');
+var app = require('electron').app;
+var BrowserWindow = require('electron').BrowserWindow;
 
-var KEY_NEXT   = 'n';
-var KEY_PREV   = 'p';
-var KEY_TOGGLE = 't';
+var path = require('path')
+var url = require('url')
 
-cec.connect();
-drive.pull('./files', 5000);
+var win;
 
-keys.init();
-keys.registerKey(KEY_NEXT, next);
-keys.registerKey(KEY_PREV, prev);
-keys.registerKey(KEY_TOGGLE, cec.toggleSelfActive);
-
-function next() {
-  console.log('next');
+function getFilePath(relativePath) {
+  return url.format({
+    pathname: path.join(__dirname, relativePath),
+    protocol: 'file:',
+    slashes: true
+  });
 }
 
-function prev() {
-  console.log('prev');
+function createWindow () {
+  win = new BrowserWindow();
+  win.loadURL(getFilePath('./ui/index.html'));
+  win.setFullScreen(true);
+  win.on('closed', function () {
+    win = null;
+  });
 }
+app.on('ready', createWindow)
