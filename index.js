@@ -17,8 +17,8 @@ function getFilePath(relativePath) {
 function createWindow () {
   win = new BrowserWindow();
   win.loadURL(getFilePath('./ui/index.html'));
-  //win.setFullScreen(true);
-  win.webContents.openDevTools()
+  win.setFullScreen(true);
+  //win.webContents.openDevTools()
   win.on('closed', function () {
     win = null;
   });
